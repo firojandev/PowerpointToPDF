@@ -16,8 +16,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Conversion\" />
+    <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Syncfusion.PresentationRenderer.NET" Version="19.4.0.56" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\uploads\" />
   </ItemGroup>
 </Project>

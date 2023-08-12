@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Reflection.Metadata;
 using Syncfusion.Pdf.Graphics;
 
+
 namespace PowerpointToPDFDemo.Controllers
 {
 	public class ConversionController : Controller
@@ -60,15 +61,24 @@ namespace PowerpointToPDFDemo.Controllers
                         //Convert the PowerPoint document to PDF document.
                         using (PdfDocument pdfDocument = PresentationToPdfConverter.Convert(pptxDoc))
                         {
-                            PdfPage page = pdfDocument.Pages[0];
 
-                            PdfPageLayer layer = page.Layers.Add("Layer1");
-                            PdfGraphics graphics = layer.Graphics;
-                            graphics.TranslateTransform(100, 60);
 
-                            PdfPen pen = new PdfPen(Syncfusion.Drawing.Color.Red,50);
-                            Syncfusion.Drawing.RectangleF bounds = new Syncfusion.Drawing.RectangleF(0, 0, 50, 50);
-                            graphics.DrawRectangle(pen,bounds);
+                            //Adding layer
+                            //PdfPage page = pdfDocument.Pages[0];
+                            //// Get the page size before it is rendered.
+                            //var pageSize = page.Size;
+                            //// Get the width of the page.
+                            //var width = pageSize.Width;
+                            //PdfPageLayer layer = page.Layers.Add("Layer1");
+                            //PdfGraphics graphics = layer.Graphics;
+                            //graphics.TranslateTransform(0,0);
+                            //PdfPen pen = new PdfPen(Syncfusion.Drawing.Color.DarkGray,50);
+                            //Syncfusion.Drawing.RectangleF bounds = new Syncfusion.Drawing.RectangleF(0, 0, width, 100);
+                            //graphics.DrawRectangle(pen,bounds);
+
+                       
+                            // Set the IsTrialWatermarkVisible property to false.
+                            pdfDocument.PageSettings.SetMargins(0f);
 
                             //Get the page object.
                             pdfDocument.Save(pdfStream);
