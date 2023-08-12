@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Conversion\" />
+    <None Remove="Syncfusion.Presentation.Net.Core" />
+    <None Remove="Syncfusion.Pdf.Net.Core" />
+    <None Remove="Syncfusion.Pdf.AspNet" />
+    <None Remove="Syncfusion.Presentation.AspNet" />
+    <None Remove="Syncfusion.PresentationRenderer.NET" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Conversion\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.PresentationRenderer.NET" Version="19.4.0.56" />
+  </ItemGroup>
+</Project>

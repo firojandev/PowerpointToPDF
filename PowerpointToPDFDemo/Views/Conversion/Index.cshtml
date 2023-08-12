@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <p>Upload</p>
+</div>
+
+
+<form method="post" asp-controller="Conversion" asp-action="Upload" enctype="multipart/form-data">
+    <input type="file" name="pptxFile" />
+    <button type="submit">Upload</button>
+</form>
+
+
