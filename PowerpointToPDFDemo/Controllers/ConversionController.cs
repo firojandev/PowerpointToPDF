@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Drawing;
 using System.Reflection.Metadata;
 using Syncfusion.Pdf.Graphics;
-
+using Syncfusion.Pdf.Parsing;
+using Syncfusion.Pdf.Interactive;
 
 namespace PowerpointToPDFDemo.Controllers
 {
@@ -64,7 +65,7 @@ namespace PowerpointToPDFDemo.Controllers
 
 
                             //Adding layer
-                            //PdfPage page = pdfDocument.Pages[0];
+                            PdfPage page = pdfDocument.Pages[0];
                             //// Get the page size before it is rendered.
                             //var pageSize = page.Size;
                             //// Get the width of the page.
@@ -76,9 +77,6 @@ namespace PowerpointToPDFDemo.Controllers
                             //Syncfusion.Drawing.RectangleF bounds = new Syncfusion.Drawing.RectangleF(0, 0, width, 100);
                             //graphics.DrawRectangle(pen,bounds);
 
-                       
-                            // Set the IsTrialWatermarkVisible property to false.
-                            pdfDocument.PageSettings.SetMargins(0f);
 
                             //Get the page object.
                             pdfDocument.Save(pdfStream);
